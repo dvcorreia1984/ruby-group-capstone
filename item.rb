@@ -1,3 +1,5 @@
+require 'date'
+
 class Item
   attr_accessor :id, :genre, :author, :source, :label, :publish_date, :archived
 
@@ -8,7 +10,7 @@ class Item
     @source = nil
     @label = nil
     @publish_date = publish_date
-    @archived = nil
+    @archived = false
   end
 
   def add_genre(genre)
@@ -28,9 +30,9 @@ class Item
   end
 
   def can_be_archived?
-    return true if @publish_date < '30/12/2012'
-  
-    return false
+    ten_years_ago = Date.today.prev_year(10)
+
+    Date.parse(@publish_date) < ten_years_ago
   end
 
   def move_to_archive
