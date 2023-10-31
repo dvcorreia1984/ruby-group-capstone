@@ -4,7 +4,11 @@ describe Book do
   book = Book.new('20/10/2023', "EGW Estate", "bad")
 
   describe "if parameters are passed correctley" do
-    
+    it "should return the correct parameters" do
+      expect(book.publish_date).to eq '20/10/2023'
+      expect(book.title).to eq 'EGW Estate'
+      expect(book.cover_state).to eq 'bad'
+    end
   end
 
   describe "#can_be_archieved?" do
