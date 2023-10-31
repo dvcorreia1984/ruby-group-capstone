@@ -26,3 +26,5 @@ def exit_program
   puts 'Thanks for using our App, Goodbye!'
   exit
 end
+
+main
