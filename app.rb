@@ -5,11 +5,10 @@ class App
   def initialize
     @all_books = []
     @all_music_albums = nil
-    @all_movies = nil
+    @all_games = nil
     @all_genres = nil
     @all_labels = []
     @all_authors = nil
-    @all_sources = nil
   end
 
   def list_all_books
@@ -27,7 +26,7 @@ class App
   def list_all_music_albums
   end
 
-  def list_all_movies
+  def list_all_games
   end
 
   def list_all_genres
@@ -44,9 +43,6 @@ class App
   end
 
   def list_all_authors
-  end
-
-  def list_all_sources
   end
 
   def add_a_book
@@ -78,6 +74,6 @@ class App
   def add_a_music_album
   end
 
-  def add_a_movie
+  def add_a_game
   end
 end
