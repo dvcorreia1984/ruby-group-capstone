@@ -1,24 +1,28 @@
 require './book'
 require './label'
+require './read'
+require './write_json'
 
 class App
+  attr_accessor :book, :music_album, :game, :genre, :label, :author
+
   def initialize
-    @all_books = []
-    @all_music_albums = nil
-    @all_games = nil
-    @all_genres = nil
-    @all_labels = []
-    @all_authors = nil
+    @book = nil
+    @music_album = nil
+    @game = nil
+    @genre = nil
+    @label = nil
+    @author = nil
   end
 
   def list_all_books
-    if @all_books.empty?
+    if read_file('book.json') == []
       puts "No book available!"
     else
-      @all_books.each_with_index do |book, index|
-        print "[Book #{index + 1}] - BookID: #{book.id} Published date: #{book.publish_date}, "
-        print "Publisher: #{book.publisher}, Cover state: #{book.cover_state}, "
-        print "Title: #{book.label.title}, Color: #{book.label.color} \n"
+      read_file('book.json').each_with_index do |book, index|
+        print "[Book #{index + 1}] - BookID: #{book['id']} Published date: #{book['publish_date']}, "
+        print "Publisher: #{book['publisher']}, Cover state: #{book['cover_state']}, "
+        print "Title: #{book['label']['title']}, Color: #{book['label']['color']} \n"
       end
     end
   end
@@ -33,11 +37,11 @@ class App
   end
 
   def list_all_labels
-    if @all_labels.empty?
+    if read_file('label.json') == []
       puts "No label found!"
     else
-      @all_labels.each do |label|
-        puts "LabelID: #{label.id}, Title: #{label.title}"
+      read_file('label.json').each do |label|
+        puts "LabelID: #{label['id']}, Title: #{label['title']}"
       end
     end
   end
@@ -66,8 +70,10 @@ class App
 
     label.add_item(book)
 
-    @all_books << book
-    @all_labels << label
+    @book = book
+    book_json
+    @label = label
+    label_json
     puts "Book added successfully!"
   end
 

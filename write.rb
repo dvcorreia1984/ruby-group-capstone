@@ -3,7 +3,7 @@ require 'json'
 def write_file(data, file)
   if File.exist?(file)
     file_data = File.read(file)
-    json_array = File.parse(file_data)
+    json_array = JSON.parse(file_data)
 
     if json_array.is_a?(Array)
       json_array << data
@@ -14,4 +14,5 @@ def write_file(data, file)
     File.open(file, 'w') { |f| f.puts JSON.generate(json_array) }
   else
     File.open(file, 'w') { |f| f.puts JSON.generate([data]) }
+  end
 end
