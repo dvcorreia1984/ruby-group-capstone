@@ -7,7 +7,7 @@ class App
     @all_music_albums = nil
     @all_movies = nil
     @all_genres = nil
-    @all_labels = nil
+    @all_labels = []
     @all_authors = nil
     @all_sources = nil
   end
@@ -16,8 +16,10 @@ class App
     if @all_books.empty?
       puts "No book available!"
     else
-      @all_books.each do |book, index = 0|
-        puts "[Book #{index + 1}] - Published date: #{book.publish_date}, Publisher: #{book.publisher}, Cover state: #{book.cover_state}"
+      @all_books.each_with_index do |book, index|
+        print "[Book #{index + 1}] - BookID: #{book.id} Published date: #{book.publish_date}, "
+        print "Publisher: #{book.publisher}, Cover state: #{book.cover_state}, "
+        print "Title: #{book.label.title}, Color: #{book.label.color} \n"
       end
     end
   end
@@ -32,6 +34,13 @@ class App
   end
 
   def list_all_labels
+    if @all_labels.empty?
+      puts "No label found!"
+    else
+      @all_labels.each do |label|
+        puts "LabelID: #{label.id}, Title: #{label.title}"
+      end
+    end
   end
 
   def list_all_authors
@@ -50,8 +59,19 @@ class App
     puts "Enter the cover state:"
     cover_state = gets.chomp.downcase
 
+    puts "Enter label title:"
+    title = gets.chomp
+
+    puts "Enter label color:"
+    color = gets.chomp
+
     book = Book.new(publish_date, publisher, cover_state)
+    label = Label.new(title, color)
+
+    label.add_item(book)
+
     @all_books << book
+    @all_labels << label
     puts "Book added successfully!"
   end
 
