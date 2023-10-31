@@ -1,5 +1,3 @@
-require_relative 'add_a_game'
-
 class App
   def initialize
     @all_books = nil
@@ -32,5 +30,24 @@ class App
 
   def add_a_movie; end
 
-  def add_a_game; end
+  def add_a_game
+    puts 'What is the name of the game?'
+    title = gets.chomp.to_s
+
+    multiplayer = get_valid_multiplayer_input
+
+    puts 'When last did you play the game?'
+    last_played_at = gets.chomp.to_s
+  end
+end
+
+def get_valid_multiplayer_input
+  loop do
+    puts 'Is the game multiplayer? (y/n)'
+    answer = gets.chomp.downcase
+    return answer == 'y' if %w[y n].include?(answer)
+
+
+    puts 'Invalid input. Please enter "y" or "n."'
+  end
 end

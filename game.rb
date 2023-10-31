@@ -17,12 +17,11 @@ class Game < Item
     ten_years_ago = Date.today.prev_year(10)
     last_played_date = Date.parse(@last_played_at)
 
-    if parent_can_be_archived && last_played_date < Date.today.prev_year(2)
-      return true
-    else
-      return false
-    end
+    return true if parent_can_be_archived && last_played_date < Date.today.prev_year(2)
+
+
+    false
   end
 end
 
-game1 = Game.new("2020-01-01", true, "2021-10-15", "John Doe", false)
+game1 = Game.new('2020-01-01', true, '2021-10-15', 'John Doe', false)
