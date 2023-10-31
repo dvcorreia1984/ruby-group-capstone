@@ -1,3 +1,6 @@
+require './item'
+require './game'
+
 class App
   def initialize
     @all_books = nil
@@ -31,13 +34,26 @@ class App
   def add_a_movie; end
 
   def add_a_game
-    puts 'What is the name of the game?'
-    title = gets.chomp.to_s
+
+    puts 'Enter the date the game was published (YYYY-MM-DD)'
+    publish_date = gets.chomp.to_s
+
+    puts 'Enter the author of the game'
+    author = gets.chomp.to_s
 
     multiplayer = get_valid_multiplayer_input
 
-    puts 'When last did you play the game?'
+    puts 'When last did you play the game? (YYYY-MM-DD)'
     last_played_at = gets.chomp.to_s
+
+    puts 'Is the game archived? (true/false):'
+    archived = gets.chomp.to_s == 'true'
+
+    game = Game.new(publish_date, archived, multiplayer, last_played_at)
+    @all_games << game
+
+    puts "The game was added."
+
   end
 end
 
@@ -46,8 +62,6 @@ def get_valid_multiplayer_input
     puts 'Is the game multiplayer? (y/n)'
     answer = gets.chomp.downcase
     return answer == 'y' if %w[y n].include?(answer)
-
-
     puts 'Invalid input. Please enter "y" or "n."'
   end
 end
