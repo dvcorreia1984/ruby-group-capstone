@@ -10,7 +10,8 @@ def handle_user_input(user_input, app)
     8 => -> { app.add_a_book },
     9 => -> { app.add_a_music_album },
     10 => -> { app.add_a_movie },
-    11 => -> { exit_program }
+    11 => -> { app.add_a_game },
+    12 => -> { exit_program }
   }
 
   action = actions[user_input]

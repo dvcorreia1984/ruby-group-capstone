@@ -10,5 +10,6 @@ def display_menu
   puts '8 - Add a book'
   puts '9 - Add a music album'
   puts '10 - Add a movie'
-  puts '11 - Exit'
+  puts '11 - Add a game'
+  puts '12 - Exit'
 end

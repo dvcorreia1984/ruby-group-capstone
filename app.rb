@@ -1,3 +1,5 @@
+require_relative 'add_a_game'
+
 class App
   def initialize
     @all_books = nil
@@ -7,6 +9,7 @@ class App
     @all_labels = nil
     @all_authors = nil
     @all_sources = nil
+    @all_games = []
   end
 
   def list_all_books; end
@@ -28,4 +31,6 @@ class App
   def add_a_music_album; end
 
   def add_a_movie; end
+
+  def add_a_game; end
 end
