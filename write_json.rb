@@ -1,4 +1,3 @@
-
 require './app'
 require './write'
 
@@ -25,26 +24,4 @@ def label_json
   }
 
   write_file(data, 'label.json')
-end
-
-def game_json
-  data = {
-    id: @game.id,
-    publish_date: @game.publish_date,
-    multiplayer: @game.multiplayer,
-    last_played_at: @game.last_played_at,
-    archived: @game.archived
-  }
-
-  write_file(data, 'game.json')
-end
-
-def author_json
-  data = {
-    id: @author.id,
-    first_name: @author.first_name,
-    last_name: @author.last_name
-  }
-
-  write_file(data, 'author.json')
 end
