@@ -26,7 +26,17 @@ class App
 
   def list_all_labels; end
 
-  def list_all_authors; end
+  def list_all_authors
+    if read_file('author.json') == []
+      puts "No authors available!"
+    else
+      read_file('author.json').each_with_index do |author|
+        print "Author ID: #{author['id']}, "
+        print "Name: #{author['first_name']} #{author['last_name']}"
+        puts "\n"
+      end
+    end
+  end
 
   def list_all_sources; end
 
@@ -54,11 +64,12 @@ class App
     puts 'Enter the date the game was published (YYYY-MM-DD)'
     publish_date = gets.chomp.to_s
 
-    puts 'Enter the Name of the Author'
-    author_name = gets.chomp.to_s
+    puts 'Enter the First Name of the Author'
+    first_name = gets.chomp.to_s
+
     puts 'Enter the Last Name of the Author'
-    author_last_name = gets.chomp.to_s
-    author = Author.new(author_name, author_last_name)
+    last_name = gets.chomp.to_s
+    author = Author.new(first_name, last_name)
 
     multiplayer = get_valid_multiplayer_input
 
@@ -72,6 +83,11 @@ class App
 
     @game = game
     game_json
+
+    author = Author.new(first_name, last_name)
+
+    @author = author
+    author_json
 
     puts "The game was added."
 

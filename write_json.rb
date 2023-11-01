@@ -38,3 +38,13 @@ def game_json
 
   write_file(data, 'game.json')
 end
+
+def author_json
+  data = {
+    id: @author.id,
+    first_name: @author.first_name,
+    last_name: @author.last_name
+  }
+
+  write_file(data, 'author.json')
+end
