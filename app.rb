@@ -4,6 +4,8 @@ require './read'
 require './write_json'
 
 class App
+  attr_accessor :book, :music_album, :game, :genre, :label, :author
+
   def initialize
     @book = nil
     @music_album = nil
@@ -27,7 +29,19 @@ class App
 
   def list_all_sources; end
 
-  def list_all_games; end
+  def list_all_games
+    if read_file('game.json') == []
+      puts "No games available!"
+    else
+      read_file('game.json').each_with_index do |game|
+        print "Game ID: #{game['id']}, "
+        print "Last played at #{game['last_played_at']} "
+        print "(multiplayer)" if game['multiplayer']
+        print "(archived)" if game['archived']
+        puts "\n"
+      end
+    end
+  end
 
   def add_a_book; end
 
