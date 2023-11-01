@@ -3,14 +3,12 @@ require './game'
 
 class App
   def initialize
-    @all_books = nil
-    @all_music_albums = nil
-    @all_movies = nil
-    @all_genres = nil
-    @all_labels = nil
-    @all_authors = []
-    @all_sources = nil
-    @all_games = []
+    @book = nil
+    @music_album = nil
+    @game = nil
+    @genre = nil
+    @label = nil
+    @author = nil
   end
 
   def list_all_books; end
@@ -26,6 +24,8 @@ class App
   def list_all_authors; end
 
   def list_all_sources; end
+
+  def list_all_games; end
 
   def add_a_book; end
 
@@ -49,9 +49,7 @@ class App
     puts 'Is the game archived? (true/false):'
     archived = gets.chomp.to_s == 'true'
 
-    game = Game.new(publish_date, archived, multiplayer, last_played_at, author)
-    @all_games << game
-    @all_authors << author
+    game = Game.new(publish_date, multiplayer, last_played_at)
 
     puts "The game was added."
 
