@@ -1,5 +1,7 @@
 require './item'
 require './game'
+require './read'
+require './write_json'
 
 class App
   def initialize
@@ -50,6 +52,9 @@ class App
     archived = gets.chomp.to_s == 'true'
 
     game = Game.new(publish_date, multiplayer, last_played_at)
+
+    @game = game
+    game_json
 
     puts "The game was added."
 
