@@ -17,7 +17,7 @@ class App
 
   def list_all_books
     if read_file('book.json') == []
-      puts "No book available!"
+      puts 'No book available!'
     else
       read_file('book.json').each_with_index do |book, index|
         print "[Book #{index + 1}] - BookID: #{book['id']}, Published date: #{book['publish_date']}, "
@@ -27,18 +27,15 @@ class App
     end
   end
 
-  def list_all_music_albums
-  end
+  def list_all_music_albums; end
 
-  def list_all_games
-  end
+  def list_all_games; end
 
-  def list_all_genres
-  end
+  def list_all_genres; end
 
   def list_all_labels
     if read_file('label.json') == []
-      puts "No label found!"
+      puts 'No label found!'
     else
       read_file('label.json').each do |label|
         puts "LabelID: #{label['id']}, Title: #{label['title']}"
@@ -46,23 +43,22 @@ class App
     end
   end
 
-  def list_all_authors
-  end
+  def list_all_authors; end
 
   def add_a_book
-    puts "Enter the published date(dd/mm/yy):"
+    puts 'Enter the published date(dd/mm/yy):'
     publish_date = gets.chomp
 
-    puts "Enter the publisher:"
+    puts 'Enter the publisher:'
     publisher = gets.chomp
 
-    puts "Enter the cover state:"
+    puts 'Enter the cover state:'
     cover_state = gets.chomp.downcase
 
-    puts "Enter label title:"
+    puts 'Enter label title:'
     title = gets.chomp
 
-    puts "Enter label color:"
+    puts 'Enter label color:'
     color = gets.chomp
 
     book = Book.new(publish_date, publisher, cover_state)
@@ -74,12 +70,10 @@ class App
     book_json
     @label = label
     label_json
-    puts "Book added successfully!"
+    puts 'Book added successfully!'
   end
 
-  def add_a_music_album
-  end
+  def add_a_music_album; end
 
-  def add_a_game
-  end
+  def add_a_game; end
 end
