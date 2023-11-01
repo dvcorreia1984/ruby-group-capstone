@@ -8,7 +8,7 @@ class App
     @all_movies = nil
     @all_genres = nil
     @all_labels = nil
-    @all_authors = nil
+    @all_authors = []
     @all_sources = nil
     @all_games = []
   end
@@ -49,8 +49,9 @@ class App
     puts 'Is the game archived? (true/false):'
     archived = gets.chomp.to_s == 'true'
 
-    game = Game.new(publish_date, archived, multiplayer, last_played_at)
+    game = Game.new(publish_date, archived, multiplayer, last_played_at, author)
     @all_games << game
+    @all_authors << author
 
     puts "The game was added."
 
