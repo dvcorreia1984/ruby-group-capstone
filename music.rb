@@ -8,6 +8,7 @@ class Music
   
     def can_be_archived?
       parent_result = super
-  
+
+      parent_result && @on_spotify == true ? true : false
     end
   end
