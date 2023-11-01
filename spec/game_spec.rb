@@ -1,5 +1,5 @@
-require_relative '../game.rb'
-require_relative '../app.rb'
+require_relative '../game'
+require_relative '../app'
 
 describe Game do
   it 'id should be an integer' do

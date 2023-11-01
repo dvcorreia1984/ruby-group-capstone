@@ -1,4 +1,4 @@
-require './game.rb'
+require './game'
 
 game1 = Game.new('2009-01-01', true, '2019-01-02')
 

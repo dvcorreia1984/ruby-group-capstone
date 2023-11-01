@@ -1,4 +1,4 @@
-require_relative '../author.rb'
+require_relative '../author'
 
 describe Author do
   it 'should have last_name' do
