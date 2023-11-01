@@ -2,6 +2,7 @@ require './item'
 require './game'
 require './read'
 require './write_json'
+require './author'
 
 class App
   attr_accessor :book, :music_album, :game, :genre, :label, :author
@@ -50,12 +51,14 @@ class App
   def add_a_movie; end
 
   def add_a_game
-
     puts 'Enter the date the game was published (YYYY-MM-DD)'
     publish_date = gets.chomp.to_s
 
-    puts 'Enter the author of the game'
-    author = gets.chomp.to_s
+    puts 'Enter the Name of the Author'
+    author_name = gets.chomp.to_s
+    puts 'Enter the Last Name of the Author'
+    author_last_name = gets.chomp.to_s
+    author = Author.new(author_name, author_last_name)
 
     multiplayer = get_valid_multiplayer_input
 
@@ -65,7 +68,7 @@ class App
     puts 'Is the game archived? (true/false):'
     archived = gets.chomp.to_s == 'true'
 
-    game = Game.new(publish_date, multiplayer, last_played_at)
+    game = Game.new(publish_date, multiplayer, last_played_at, author)
 
     @game = game
     game_json

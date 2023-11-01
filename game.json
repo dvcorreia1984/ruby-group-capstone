@@ -5,5 +5,19 @@
     "multiplayer": true,
     "last_played_at": "12341",
     "archived": false
+  },
+  {
+    "id": 871,
+    "publish_date": "124123",
+    "multiplayer": true,
+    "last_played_at": "124213",
+    "archived": false
+  },
+  {
+    "id": 923,
+    "publish_date": "2023-07-23",
+    "multiplayer": true,
+    "last_played_at": "2023-09-12",
+    "archived": false
   }
 ]
