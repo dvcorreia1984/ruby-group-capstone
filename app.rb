@@ -20,7 +20,7 @@ class App
       puts "No book available!"
     else
       read_file('book.json').each_with_index do |book, index|
-        print "[Book #{index + 1}] - BookID: #{book['id']} Published date: #{book['publish_date']}, "
+        print "[Book #{index + 1}] - BookID: #{book['id']}, Published date: #{book['publish_date']}, "
         print "Publisher: #{book['publisher']}, Cover state: #{book['cover_state']}, "
         print "Title: #{book['label']['title']}, Color: #{book['label']['color']} \n"
       end
