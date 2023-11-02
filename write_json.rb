@@ -1,4 +1,3 @@
-
 require './app'
 require './write'
 
@@ -15,7 +14,7 @@ end
 def genre_json
   data = {
     id: @genre.id,
-    title: @genre.name
+    name: @genre.name
   }
 
   write_file(data, 'genre.json')
