@@ -1,3 +1,7 @@
+
+require './music'
+require './read'
+
 class App
   def initialize
     @all_books = nil
@@ -13,6 +17,14 @@ class App
   end
 
   def list_all_music_albums
+    if read_file('genre.json') == []
+      puts 'No music album available!'
+    else
+      read_file('genre.json').each_with_index do |music, index|
+        print "[Music Album #{index + 1}] - Music_AlbumID: #{music['id']}, Published date: #{music['publish_date']}, "
+        print "Name: #{music['name']}"
+      end
+    end
   end
 
   def list_all_movies
