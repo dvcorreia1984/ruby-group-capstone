@@ -2,12 +2,21 @@
 require './app'
 require './write'
 
-def genre_json
+def music_json
   data = {
-    id: @book.id,
-    publish_date: @book.publish_date,
-    publisher: @book.name,
+    id: @music.id,
+    publish_date: @music.publish_date,
+    on_spotify: @music.on_spotify
   }
 
-  write_file(data, 'book.json')
+  write_file(data, 'music.json')
+end
+
+def genre_json
+  data = {
+    id: @genre.id,
+    title: @genre.name
+  }
+
+  write_file(data, 'genre.json')
 end
