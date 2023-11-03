@@ -35,4 +35,11 @@ describe Item do
       expect(item1.genre).to be genre1
     end
   end
+
+  describe '#archive if older than 10 years' do
+    it 'should return true' do
+      item1.publish_date = '20/10/2010'
+      expect(item1.can_be_archived?).to be true
+    end
+  end
 end
