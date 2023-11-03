@@ -18,12 +18,10 @@ describe Genre do
   end
 
   it 'should add items and associate them correctly' do
-    genre1 = Genre.new('Drama')
-    item = double('Item')
-    genre1.add_item(item)
-
-    expect(item).to receive(:genre=).with(genre1)
-
-    expect(genre1.items).to include(item)
+    genre1 = Genre.new('Comedy')
+    item1 = Item.new('20/10/2020')
+    genre1.add_item(item1)
+    expect(genre1.items).to include(item1)
+    expect(item1.genre).to be(genre1)
   end
 end
