@@ -7,10 +7,9 @@ class Item
     @id = Random.rand(1..1000)
     @genre = nil
     @author = nil
-    @source = nil
     @label = nil
     @publish_date = publish_date
-    @archived = false
+    @archived = nil
   end
 
   def add_genre(genre)
@@ -19,10 +18,6 @@ class Item
 
   def add_author(author)
     @author = author
-  end
-
-  def add_source(source)
-    @source = source
   end
 
   def add_label(label)

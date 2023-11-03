@@ -1,8 +1,8 @@
-require '../genre'
+require './genre'
 
 describe Genre do
   it 'should have name' do
-    Genre.new('Lamhe')
-    expect(author.name).to eq('Lamhe')
+    genre1 = Genre.new('Lamhe')
+    expect(genre1.name).to eq('Lamhe')
   end
 end
