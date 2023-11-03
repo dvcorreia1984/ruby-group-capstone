@@ -5,7 +5,6 @@ require './handle_user_input'
 def main
   puts
   puts 'Welcome to Catalog of My Things App!'
-  puts
 
   main_extended
 end
