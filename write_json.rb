@@ -18,6 +18,7 @@ def genre_json
   }
 
   write_file(data, 'genre.json')
+end
 
 def book_json
   data = {
