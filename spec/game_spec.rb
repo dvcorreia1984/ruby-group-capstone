@@ -30,6 +30,12 @@ describe Game do
         expect(game.multiplayer).not_to eq false
       end
     end
+  end
+end
+
+describe App do
+  context 'when the app is created with valid parameters' do
+    let(:app) { App.new }
 
     describe 'validate multiplayer input' do
       context 'when user enters "y"' do
@@ -58,9 +64,7 @@ describe Game do
         it 'asks for input again and returns the correct result' do
           app = App.new
           allow(app).to receive(:gets).and_return('invalid', 'y')
-
           result = app.valid_multiplayer_input
-
           expect(result).to be(true)
         end
       end
