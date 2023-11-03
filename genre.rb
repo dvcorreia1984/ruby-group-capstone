@@ -1,8 +1,8 @@
 require './item'
 
 class Genre < Item
-    attr_reader :id, :name
-    attr_accessor :items
+  attr_reader :id, :name
+  attr_accessor :items
 
   def initialize(name)
     @id = Random.rand(1000)
