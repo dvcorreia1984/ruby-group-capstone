@@ -45,7 +45,8 @@ CREATE TABLE label (
 CREATE TABLE author (
   id INT PRIMARY KEY,
   first_name VARCHAR(255),
-  last_name VARCHAR(255)
+  last_name VARCHAR(255),
+  items JSON[]
 );
 
 ALTER TABLE book ADD CONSTRAINT fk_label_id FOREIGN KEY(label_id) REFERENCES label(id);
