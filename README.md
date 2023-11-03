@@ -15,6 +15,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+    - [Video walkthrough](#video-walkthrough)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -31,7 +32,7 @@
 
 # 📖 [Ruby Group Capstone] <a name="about-project"></a>
 
-**[Ruby Group Capstone]**  Is an app keeping a catalogue of my things. 
+**[Ruby Group Capstone]**  Is an app keeping a catalog of my things. 
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -56,6 +57,12 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### Video Walkthrough <a name="video-walkthrough"></a>
+
+[Video Walkthrough](https://drive.google.com/file/d/1KVQPsHHzYHWJrVGvPTuedxeXUgpVbU43/view?usp=drive_link)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
@@ -64,7 +71,7 @@ To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-In order to run this project you need:
+To run this project you need:
 
  - `bundle install`
 
