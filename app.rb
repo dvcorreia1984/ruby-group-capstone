@@ -175,14 +175,13 @@ class App
 
     puts 'The game was added.'
   end
-end
 
-def valid_multiplayer_input
-  loop do
-    puts 'Is the game multiplayer? (y/n)'
-    answer = gets.chomp.downcase
-    return answer == 'y' if %w[y n].include?(answer)
-
-    puts 'Invalid input. Please enter "y" or "n."'
+  def valid_multiplayer_input
+    loop do
+      puts 'Is the game multiplayer? (y/n)'
+      answer = gets.chomp.downcase
+      return answer == 'y' if %w[y n].include?(answer)
+      puts 'Invalid input. Please enter "y" or "n."'
+    end
   end
 end

@@ -11,10 +11,16 @@ class Game < Item
 
   def can_be_archived?
     parent_can_be_archived = super
-    Date.today.prev_year(10)
-    last_played_date = Date.parse(@last_played_at)
+
+    begin
+      last_played_date = Date.parse(@last_played_at)
+    rescue Date::Error
+      return false
+    end
+
     return true if parent_can_be_archived && last_played_date < Date.today.prev_year(2)
 
     false
   end
+
 end
