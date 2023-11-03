@@ -30,11 +30,14 @@ class App
     end
   end
 
-  def list_all_music_albums; end
+  def list_all_music_albums
+  end
 
-  def list_all_movies; end
+  def list_all_movies
+  end
 
-  def list_all_genres; end
+  def list_all_genres
+  end
 
   def list_all_labels
     if read_file('label.json') == []
@@ -100,7 +103,8 @@ class App
     puts 'Book added successfully!'
   end
 
-  def add_a_music_album; end
+  def add_a_music_album
+  end
 
   def add_a_game
     puts 'Enter the date the game was published (YYYY-MM-DD)'
