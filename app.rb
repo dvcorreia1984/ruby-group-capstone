@@ -181,6 +181,7 @@ class App
       puts 'Is the game multiplayer? (y/n)'
       answer = gets.chomp.downcase
       return answer == 'y' if %w[y n].include?(answer)
+
       puts 'Invalid input. Please enter "y" or "n."'
     end
   end
