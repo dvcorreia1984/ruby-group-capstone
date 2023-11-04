@@ -136,7 +136,7 @@ To run tests, run the following command:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/dvcorreia1984/ruby-group-capstone).
+Feel free to check the [issues page](https://github.com/dvcorreia1984/ruby-group-capstone/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
