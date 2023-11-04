@@ -36,10 +36,15 @@ describe Item do
     end
   end
 
-  describe '#archive if older than 10 years' do
-    it 'should return true' do
+  describe '#archive' do
+    it 'should return true if archived' do
       item1.publish_date = '20/10/2010'
       expect(item1.can_be_archived?).to be true
+    end
+
+    it 'should test if item is moved to archive' do
+      item1.move_to_archive
+      expect(item1.archived).to be true
     end
   end
 end
